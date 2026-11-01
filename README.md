@@ -185,7 +185,7 @@ An Arduino-connected 4 × 4 matrix keypad provides an emergency override mechani
 
 **Project Title:** Computer Vision Based Parking Authorization and Authentication System
 
-**Project Type:** Bachelor of Engineering – Final Year Project
+**Project Type:** Bachelor of Engineering in Computer Systems Engineering – Final Year Project
 
 
 ├── parking_system.py       # Python backend, DB initialization, and OCR pipeline
@@ -193,6 +193,63 @@ An Arduino-connected 4 × 4 matrix keypad provides an emergency override mechani
 └── parking_system.db       # Local SQLite database (auto-generated on first run)
 
 
-## Final Year Project Contributions 
+## Team Members Contributions & Technical Breakdown 
+
+👨‍💻 Member 1: Mahmood Badar 
+
+Primary AI Focus: Computer Vision, Deep Learning Neural Networks, OCR Pipelines
+Core Infrastructure Focus: Electromechanical Sensor Optimization, Optical Stabilization1. 
+
+1. Technical Contributions (AI & Infrastructure)
+   
+Deep Learning OCR Pipeline: Spearheaded the integration of the EasyOCR text extraction engine powered by Convolutional Recurrent Neural Networks (CRNN) for high-accuracy alphanumeric character recognition.
+
+Neural Text Detection: Deployed the CRAFT (Character Region Awareness for Text Detection) deep learning model to automatically locate precise spatial bounding boxes around characters on physical license plates.
+
+Advanced Computer Vision Pre-Processing: Engineered an OpenCV processing pipeline implementing single-channel grayscale conversions, bilateral filtering for edge-preserving noise reduction, and localized Adaptive Gaussian Thresholding.
+
+Electromechanical Vision Actuation: Designed the dynamic camera bracket driven by micro-servo Pulse Width Modulation (PWM) signals to mechanically reposition a single optical sensor between 0 degree (outer lane) and 180 degree (inner lane).
+
+2. Methodological Contributions
+   
+Optical Stabilization Protocol: Developed a synchronized frame-purging sequence combining a 500ms hardware settling delay with an OpenCV memory buffer-flushing loop (cap.read()) to eliminate motion blur caused by servo rotation.
+
+Digital Zoom Optimization: Implemented a permanent 1.5x localized digital zoom (apply_zoom) to mathematically crop, center, and isolate the vehicle license plate region of interest.
+
+Heuristic String Sanitization: Programmed regex-based data cleaning filters paired with a regional identifier blacklist ("SINDH", "PUNJAB", "PAKISTAN", "GOVT") to sanitize raw OCR outputs prior to relational database validation.
+
+3. Research Aspects:
+   
+Hardware CapEx Optimization: Researched hardware resource optimization and cost reduction strategies (CapEx minimization) in multi-lane access control by replacing redundant multi-camera arrays with a single dynamic servo-actuated optical sensor.
+
+Optical Noise Evaluation: Investigated the impact of environmental optical noise (headlight glare, shadows, and weather occlusions) on deep learning neural network confidence intervals.
 
 
+👨‍💻 Member 2: Hamza Aijaz
+
+Primary AI Focus: Generative AI, Retrieval-Augmented Generation (RAG) Architecture, Vector Embeddings
+Core Infrastructure Focus: Embedded Hardware Systems, Relational Database Architecture, Firmware Integration
+
+1. Technical Contributions (AI & Infrastructure)
+
+Generative AI & RAG Orchestration: Architected and developed the RAG chatbot backend utilizing Google Gemini 2.5 Flash as the primary LLM framework (Settings.llm) integrated seamlessly via LlamaIndex.
+
+Vector Embeddings & Hybrid Storage: Implemented localized vector embedding generation using HuggingFace (BAAI/bge-small-en-v1.5) mapped to a serverless Pinecone vector database index (fyp-index) with hybrid sparse-dense retrieval across dynamic client namespaces.
+
+Cloud Document Parsing: Integrated LlamaCloud asynchronous parsing pipelines (AsyncLlamaCloud) to transform multi-format project documents (.pdf, .docx, .txt) into structured Markdown strings optimized for vector indexing.
+
+Embedded Hardware & State Management: Designed the dual MFRC522 RFID subsystem operating over a shared SPI bus and engineered the localized SQLite relational database (parking_system.db), including the authorized_users schema with dynamic is_inside binary spatial flags.
+
+2. Methodological Contributions
+
+Vector Pipeline Optimization: Configured cached resource engines (@st.cache_resource) in Streamlit to optimize Pinecone database connections and prevent redundant API handshakes during user queries.
+
+Asynchronous Concurrency: Programmed non-blocking C++ Arduino firmware using millis() timing loops and established a robust RS-232 serial communication protocol operating at 115,200 baud with deterministic payload structuring (OUTER_, INNER_).
+
+Database Integrity: Enforced strict ACID atomic transactions for SQLite database updates, ensuring spatial state synchronization and chronological audit logging (access_logs) occur seamlessly without data corruption.
+
+3. Research Aspects
+
+RAG & Enterprise Intelligence: Investigated the integration of Large Language Models with vector databases for localized enterprise document intelligence and automated information retrieval.
+
+Decentralized Edge Computing: Researched edge computing paradigms and serverless relational architectures to eliminate external cloud latency and network dependency during real-time security authentication.
