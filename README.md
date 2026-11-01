@@ -191,3 +191,8 @@ An Arduino-connected 4 × 4 matrix keypad provides an emergency override mechani
 ├── parking_system.py       # Python backend, DB initialization, and OCR pipeline
 ├── parking_system.ino      # Arduino firmware for RFID, Servos, LCD, and Keypad
 └── parking_system.db       # Local SQLite database (auto-generated on first run)
+
+
+## Final Year Project Contributions 
+
+
